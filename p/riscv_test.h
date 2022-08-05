@@ -200,7 +200,7 @@ reset_vector:                                                           \
         li TESTNUM, 0;                                                  \
         la t0, trap_vector;                                             \
         csrw mtvec, t0;                                                 \
-        CHECK_XLEN;                                                     \
+        /*CHECK_XLEN*/;                                                 \
         /* if an stvec_handler is defined, delegate exceptions to it */ \
         la t0, stvec_handler;                                           \
         beqz t0, 1f;                                                    \
